@@ -15,6 +15,7 @@ requires-python = ">=3.8"
 dependencies = [
     "inspect-ai>=0.3.33",
     "dill",
+    "pillow",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",

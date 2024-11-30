@@ -28,20 +28,20 @@ import dill
 
 logger = logging.getLogger(__name__)
 
-# try:
-import matplotlib.pyplot as plt
+try:
+    import matplotlib.pyplot as plt
 
-# except ImportError:
-#     plt = None
-#     logger.warning("Matplotlib not available")
-# try:
-from PIL import Image
+except ImportError:
+    plt = None
+    logger.warning("Matplotlib not available")
+try:
+    from PIL import Image
 
-ImageType = Image.Image
-# except ImportError:
-#     Image = None
-#     ImageType = Any
-#     logger.warning("Pillow not available")
+    ImageType = Image.Image
+except ImportError:
+    Image = None
+    ImageType = Any
+    logger.warning("Pillow not available")
 
 # from _typeshed import ReadableBuffer
 
@@ -52,7 +52,9 @@ B = TypeVar("B")
 E = TypeVar("E")
 _exec = exec
 
-base_path = Path(__file__).parent / ".cache" / "exec"
+file_path = Path(__file__)
+cache_dir = file_path.parent / ".cache"
+base_path = cache_dir / "exec"
 
 
 state_persistance_logger = logging.getLogger(f"{__name__}.state_persistance")

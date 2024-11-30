@@ -4,26 +4,20 @@ import shelve
 from pathlib import Path
 from typing import Any, Optional, Tuple
 
-from inspect_ai.tool import (
-    Content,
-    ContentImage,
-    ContentText,
-    Tool,
-    ToolError,
-    tool,
-)
+from inspect_ai.tool import Content, ContentImage, ContentText, Tool, ToolError, tool
 from inspect_ai.util import sandbox, store
 
-from ml_re_adv.shared_assets.exec import ExecResults, get_state_file
-from ml_re_adv.shared_assets import path as shared_assets_path
+from ml_re_adv.shared_assets.exec import ExecResults
+from ml_re_adv.shared_assets.exec import cache_dir as _exec_cache_dir
+from ml_re_adv.shared_assets.exec import file_path as _exec_file_local
+from ml_re_adv.shared_assets.exec import get_state_file
 from ml_re_adv.utils.images import image_to_base64
 
 logger = logging.getLogger(__name__)
 
-_exec_file_local = shared_assets_path / "shared_assets" / "exec.py"
 assert _exec_file_local.exists(), _exec_file_local
 _exec_file_contents_bytes = _exec_file_local.read_bytes()
-_sandbox_exec_cache_dir = shared_assets_path / "shared_assets" / ".cache" / "sandbox_exec"
+_sandbox_exec_cache_dir = _exec_cache_dir / "sandbox_exec"
 
 
 async def python_exec_in_sandbox(
