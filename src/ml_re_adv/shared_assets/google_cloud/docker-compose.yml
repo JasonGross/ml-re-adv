@@ -1,0 +1,24 @@
+services:
+  default:
+    build:
+      context: "."
+    # environment:
+    #   - HUGGING_FACE_HUB_TOKEN=${SAMPLE_METADATA_HF_TOKEN:-${HUGGING_FACE_HUB_TOKEN}})
+    command: "tail -f /dev/null"
+    init: true
+    # network_mode: none
+    stop_grace_period: 1s
+  without_model:
+    build:
+      context: "."
+    command: "tail -f /dev/null"
+    init: true
+    # network_mode: none
+    stop_grace_period: 1s
+  without_model2:
+    build:
+      context: "."
+    command: "tail -f /dev/null"
+    init: true
+    # network_mode: none
+    stop_grace_period: 1s
