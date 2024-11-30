@@ -1,0 +1,19 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    }
+}
