@@ -11,6 +11,7 @@ authors = [
 ]
 description = "A small extension to UK AISI inspect"
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.8"
 dependencies = ["inspect-ai>=0.3.33", "dill", "pillow"]
 classifiers = [
