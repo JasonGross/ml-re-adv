@@ -12,11 +12,7 @@ authors = [
 description = "A small extension to UK AISI inspect"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = [
-    "inspect-ai>=0.3.33",
-    "dill",
-    "pillow",
-]
+dependencies = ["inspect-ai>=0.3.33", "dill", "pillow"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -29,3 +25,4 @@ Issues = "https://github.com/JasonGross/ml-re-adv/issues"
 
 [project.optional-dependencies]
 dev = ["ipykernel", "nbformat>=4.2.0", "pre-commit"]
+inference = ["torch", "jaxtyping", "scipy", "transformer_lens", "pandas"]
