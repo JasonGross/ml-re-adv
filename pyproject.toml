@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ml_re_adv"
+version = "0.0.1"
+authors = [
+    { name = "Rajashree Agrawal", email = "rajashree.agrawal@gmail.com" },
+    { name = "Jason Gross", email = "jasongross9@gmail.com" },
+]
+description = "A small extension to UK AISI inspect"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "inspect-ai>=0.3.33",
+    "dill",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/JasonGross/ml-re-adv"
+Issues = "https://github.com/JasonGross/ml-re-adv/issues"
+
+[project.optional-dependencies]
+dev = ["ipykernel", "nbformat>=4.2.0", "pre-commit"]
